@@ -1,3 +1,23 @@
+### fixed bug in src/TextUI.cc
+lines are 315, 317, and 319.
+```
+		if( ic->getIdleSeconds() < 60 )
+			printw("%lds",ic->getIdleSeconds());
+		else if( ic->getIdleSeconds() < 3600 ) 
+			printw("%ldm",ic->getIdleSeconds()/60);
+		else
+			printw("%ldh",ic->getIdleSeconds()/3600);
+```
+file is updated just do 
+```
+git clone https://github.com/chukfinley/tcptrack/
+cd tcptrack/
+./configure
+make
+sudo make install
+```
+
+
 Getting Started
 ---------------
 
